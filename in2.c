@@ -1,0 +1,13 @@
+#include<msp430.h>
+main()
+{
+	P1DIR=0x01;
+	P1OUT=1;
+	for(;;)
+	{
+		if((P1IN&0x08)==0)
+			P1OUT=0;
+		else
+			P1OUT=1;	
+	}
+}
